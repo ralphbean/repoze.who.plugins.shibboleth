@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="header.html" />
+  <xi:include href="sidebars.html" />
+  <xi:include href="footer.html" />
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Welcome to the repoze.who LDAP plugin demo!</title>
+</head>
+
+<body>
+    ${sidebar_top()}
+  <div id="getting_started">
+    <p>This is a <a href="http://www.turbogears.org/2.0/">TurboGears 2</a> 
+    powered project that demonstrates the use of <a 
+    href="http://code.gustavonarea.net/repoze.who.plugins.ldap/">the repoze.who 
+    LDAP plugin</a>.</p>
+    <ol id="getting_started_steps">
+      <li class="getting_started">
+        <h3>Configure it!</h3>
+        <p>
+            Open the <em>who.ini</em> file of the project and set the URL to
+            your LDAP server and the base Distinguished Name for the people
+            who are going to access the system. For example, it may look like
+            this:
+        </p>
+<pre>
+# ...
+[plugin:ldap_auth]
+use = repoze.who.plugins.ldap:LDAPAuthenticatorPlugin
+ldap_connection = ldap://ldap.gnu.org
+base_dn = ou=developers,dc=gnu,dc=org
+# ...
+</pre>
+      <p>It's that simple!</p>
+      </li>
+      <li class="getting_started">
+        <h3>See it in action!</h3>
+        <p>
+            Now try to access the private page <a href="/about">"about"</a>
+            and enter your LDAP credentials on the LDAP server in use. Note that
+            you should only enter your UID, not the whole Distinguished Name
+            — your DN will be made by joining together the UID you
+            provided in the login form and the <em>base_dn</em> parameter you
+            defined above in the <em>who.ini</em> file. 
+        </p>
+        <p>
+            For example, if you give <em>rms</em> as the user name in the login
+            form, the LDAP will know your DN is the following one thanks to the
+            base DN you defined in <em>who.ini</em>.
+        </p>
+        <pre>uid=rms,ou=developers,dc=gnu,dc=org</pre>
+      </li>
+      <li class="getting_started">
+        <h3>Enable LDAP authentication in your WSGI applications!</h3>
+        <p>
+            Keep this project as a reference on how to implement the repoze.who
+            LDAP plugin in your applications. Then learn more about:
+        </p>
+        <ol>
+            <li>
+                <a href="http://code.gustavonarea.net/repoze.who.plugins.ldap/"
+                >repoze.who.plugins.ldap</a>, if you want to make the most out
+                of your LDAP authentication!
+            </li>
+            <li>
+                <a href="http://static.repoze.org/whodocs/">repoze.who</a>, if
+                you want more information about this authentication middleware.
+                If you want to customize the login form, it's all possible, but
+                that's out of the scope of the LDAP plugin — check the <a
+                href="http://static.repoze.org/whodocs/#repoze.who.plugins.form.FormPlugin"
+                >documentation for the FormPlugin</a> plugin.
+            </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>

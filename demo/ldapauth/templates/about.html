@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="header.html" />
+  <xi:include href="sidebars.html" />
+  <xi:include href="footer.html" />
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>You were authenticated via LDAP!</title>
+</head>
+
+<body>
+    ${sidebar_top()}
+  <div id="getting_started">
+    <h1>You were authenticated via LDAP!</h1>
+    <p>
+        If you can see this page, it means that you could be authenticated
+        successfully on the LDAP server you provided in the <em>who.ini</em>
+        file.
+    </p>
+    
+    <div py:if="metadata">
+    <h2>Your attributes</h2>
+    
+    <p>
+        We got the attributes below thanks to the <em>LDAPAttributesPlugin</em>
+        plugin:
+    </p>
+    <ul>
+        <li py:for="attr, value in metadata">
+            <strong>${attr}</strong>: ${value}
+        </li>
+    </ul>
+    </div>
+    
+    <p><a href="/">Go back</a>.</p>
+  </div>
+</body>
+</html>
