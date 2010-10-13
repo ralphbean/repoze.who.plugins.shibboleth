@@ -1,4 +1,10 @@
-repoze.who.plugins.ldap -- LDAP Authentication for WSGI Applications
+
+repoze.who.plugins.shibboleth -- Shibboleth Authentication for WSGI Applications
+
+Originally forked from the work of Gustavo Narea, repoze.who.plugins.ldap --
+<http://code.gustavonarea.net/repoze.who.plugins.ldap/>.
+
+-- (TODO) modify the below:
 
 repoze.who.plugins.ldap is an LDAP plugin for the identification and
 authentication framework for WSGI applications, repoze.who, which acts as WSGI
@@ -13,4 +19,4 @@ Another great news is that this package is *fully* documented and provides you
 with a working and documented demo project.
 
 See the `docs` subdirectory of this package for more information, or browse
-the online documentation <http://code.gustavonarea.net/repoze.who.plugins.ldap/>.
+the online documentation 
