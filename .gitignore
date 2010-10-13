@@ -1,0 +1,7 @@
+build
+*.pyc
+*.swp
+virtualenv*
+README.pdf
+dist
+*.egg*
