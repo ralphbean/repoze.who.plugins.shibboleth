@@ -1,0 +1,13 @@
+Variables?  this is stuff that php+drupal shib_auth uses:
+
+    'auth_link_text',
+    'shib_auth_handler_url',
+    'shib_auth_handler_protocol',
+    'shib_auth_wayf_uri',
+    'shib_auth_username_variable',
+    'shib_auth_username_email',
+    'shib_auth_auto_destroy_session',
+    'shib_logout_url',
+    'shib_auth_debug_state',
+    'shib_auth_debug_url',
+    'shib_auth_mail_shib_only',
