@@ -1,8 +1,13 @@
-
 repoze.who.plugins.shibboleth -- Shibboleth Authentication for WSGI Applications
 
 Originally forked from the work of Gustavo Narea, repoze.who.plugins.ldap --
 <http://code.gustavonarea.net/repoze.who.plugins.ldap/>.
+
+.. note:: This repo is dead.
+   The code never got off the ground and you can already find good
+   implementations of what I was trying to do here in pysaml2
+   https://pypi.python.org/pypi/pysaml2/ and
+   http://pythonhosted.org/pysaml2/examples/sp.html
 
 -- (TODO) modify the below:
 
